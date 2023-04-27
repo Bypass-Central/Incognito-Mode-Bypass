@@ -5,7 +5,7 @@
   </head>
   <body>
     <div class="container">
-      <a class="button" href="#" style="--color:#1e9bff;" onclick="openVideo()">
+      <a class="button" id="videobtn" style="--color:#1e9bff;">
         <span></span>
         <span></span>
         <span></span>
@@ -14,23 +14,34 @@
       </a>
     </div>
     <script>
-      function openGame() {
-        var win = window.open()
-        var url = "https://www.youtube-nocookie.com/embed/vFNmrGaV6YQ"
-        var iframe = win.document.createElement('iframe')
-        iframe.style.width = "100%";
-        iframe.style.height = "100%";
-        iframe.style.border = "none";
-        iframe.style.top = "0";
-        iframe.style.left = "0";
-        iframe.style.botton = "0";
-        iframe.style.right = "0";
-        iframe.style.position = "fixed";
-        iframe.style.margin = "0";
-        iframe.style.padding = "0";
-        iframe.style.overflow = "hidden";
-        iframe.src = url
-        win.document.body.appendChild(iframe)
+      // Wait for the page to load first
+      window.onload = function() {
+
+        //Get a reference to the link on the page
+        // with an id of "mylink"
+        var a = document.getElementById("mylink");
+
+        //Set code to run when the link is clicked
+        // by assigning a function to "onclick"
+        a.onclick = function() {
+          var win = window.open()
+          var url = "https://www.youtube-nocookie.com/embed/vFNmrGaV6YQ"
+          var iframe = win.document.createElement('iframe')
+          iframe.style.width = "100%";
+          iframe.style.height = "100%";
+          iframe.style.border = "none";
+          iframe.style.top = "0";
+          iframe.style.left = "0";
+          iframe.style.botton = "0";
+          iframe.style.right = "0";
+          iframe.style.position = "fixed";
+          iframe.style.margin = "0";
+          iframe.style.padding = "0";
+          iframe.style.overflow = "hidden";
+          iframe.src = url
+          win.document.body.appendChild(iframe)
+          return false;
+        }
       }
     </script>
   </body>
